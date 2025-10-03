@@ -1,0 +1,49 @@
+@import '../variables';
+@import '../mixins';
+
+.productFeatures {
+  background-color: $light-gray;
+  @include section-padding;
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+    
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+  
+  .feature {
+    text-align: center;
+    
+    .imageWrapper {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto $spacing-md;
+      border-radius: 50%;
+      overflow: hidden;
+      @include card-shadow;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-sm;
+      text-transform: uppercase;
+    }
+    
+    p {
+      color: $text-light;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+}

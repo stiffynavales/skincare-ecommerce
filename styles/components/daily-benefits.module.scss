@@ -1,0 +1,65 @@
+@import '../variables';
+@import '../mixins';
+
+.dailyBenefits {
+  background-color: $white;
+  @include section-padding;
+  
+  .heading {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    
+    h2 {
+      @include heading-medium;
+      margin-bottom: $spacing-sm;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: $text-light;
+    }
+  }
+  
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+    
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .benefitCard {
+    background-color: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    @include card-shadow;
+    
+    .imageWrapper {
+      height: 300px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    .content {
+      padding: $spacing-md;
+      
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: $spacing-sm;
+        text-transform: uppercase;
+      }
+      
+      p {
+        color: $text-light;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}

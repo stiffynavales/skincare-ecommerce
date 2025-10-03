@@ -1,0 +1,90 @@
+@import './variables';
+
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0 $spacing-sm;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin button-primary {
+  background-color: $primary-yellow;
+  color: $text-dark;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  &:hover {
+    background-color: darken($primary-yellow, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin section-padding {
+  padding: $spacing-xl 0;
+  
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-lg 0;
+  }
+}
+
+@mixin heading-large {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+  
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 2.5rem;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 2rem;
+  }
+}
+
+@mixin heading-medium {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-transform: uppercase;
+  
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+}

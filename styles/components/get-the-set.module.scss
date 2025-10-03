@@ -1,0 +1,80 @@
+@import '../variables';
+@import '../mixins';
+
+.getTheSet {
+  background-color: $light-gray;
+  @include section-padding;
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: center;
+    
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .content {
+    h2 {
+      @include heading-medium;
+      margin-bottom: $spacing-md;
+      color: $primary-yellow;
+    }
+    
+    .checklist {
+      margin-bottom: $spacing-md;
+      
+      .item {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-sm;
+        font-size: 1rem;
+        
+        &::before {
+          content: '✓';
+          color: $primary-yellow;
+          font-weight: 900;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    
+    .pricing {
+      margin-bottom: $spacing-md;
+      
+      .price {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: $text-dark;
+        
+        .currency {
+          font-size: 1.5rem;
+        }
+      }
+      
+      .originalPrice {
+        text-decoration: line-through;
+        color: $text-light;
+        font-size: 1.2rem;
+        margin-left: $spacing-sm;
+      }
+    }
+    
+    .cta {
+      @include button-primary;
+    }
+  }
+  
+  .productImage {
+    @include flex-center;
+    
+    img {
+      max-width: 500px;
+      width: 100%;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+    }
+  }
+}

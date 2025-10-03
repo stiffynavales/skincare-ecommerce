@@ -1,0 +1,66 @@
+@import '../variables';
+@import '../mixins';
+
+.simpleRoutine {
+  background-color: $white;
+  @include section-padding;
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: center;
+    
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+  
+  .content {
+    h2 {
+      @include heading-medium;
+      margin-bottom: $spacing-md;
+      
+      span {
+        display: block;
+      }
+    }
+    
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+      margin-bottom: $spacing-md;
+      
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        font-size: 1rem;
+        color: $text-light;
+        
+        &::before {
+          content: '✓';
+          color: $primary-yellow;
+          font-weight: 900;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    
+    .cta {
+      @include button-primary;
+    }
+  }
+  
+  .productImage {
+    @include flex-center;
+    
+    img {
+      max-width: 400px;
+      width: 100%;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+    }
+  }
+}

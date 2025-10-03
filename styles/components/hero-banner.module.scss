@@ -1,0 +1,52 @@
+@import '../variables';
+@import '../mixins';
+
+.heroBanner {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  
+  @media (max-width: $breakpoint-tablet) {
+    height: 400px;
+  }
+  
+  .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent);
+    }
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    @include flex-center;
+    color: $white;
+    text-align: center;
+    padding: $spacing-md;
+    
+    h2 {
+      @include heading-large;
+      max-width: 800px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
